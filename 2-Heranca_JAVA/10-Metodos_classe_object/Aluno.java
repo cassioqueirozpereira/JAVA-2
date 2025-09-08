@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Aluno extends PessoaFisica {
     String matricula;
 
@@ -16,15 +18,16 @@ public class Aluno extends PessoaFisica {
 
     @Override
     public boolean equals(Object obj) {
-        if ((this.CPF == ((Aluno) obj).CPF) && (this.matricula == ((Aluno) obj).matricula))
-            return true;
-        else
-            return false;
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+
+        Aluno other = (Aluno) obj;
+        return Objects.equals(this.CPF, other.CPF) && Objects.equals(this.matricula, other.matricula);
     }
 
     @Override
     public int hashCode() {
-        return (this.CPF + this.matricula).hashCode();
+        return Objects.hash(this.CPF, this.matricula);
     }
 
     @Override

@@ -1,6 +1,8 @@
+import java.util.Objects;
+
 public class PessoaFisica {
-    String CPF;
-    String nome;
+    protected String CPF;
+    protected String nome;
 
     public PessoaFisica(String CPF, String nome) {
         setCPF(CPF);
@@ -18,9 +20,9 @@ public class PessoaFisica {
     public void setCPF(String CPF) {
         if (validaCPF(CPF)) {
             this.CPF = CPF;
-        }
-        else
+        } else {
             System.out.println("CPF inválido");
+        }
     }
 
     public String getCPF() {
@@ -29,15 +31,16 @@ public class PessoaFisica {
 
     @Override
     public boolean equals(Object obj) {
-        if (this.CPF == ((PessoaFisica) obj).CPF)
-            return true;
-        else
-            return false;
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+
+        PessoaFisica other = (PessoaFisica) obj;
+        return Objects.equals(CPF, other.CPF);
     }
 
     @Override
     public int hashCode() {
-        return CPF.hashCode();
+        return Objects.hash(CPF);
     }
 
     @Override
@@ -46,12 +49,10 @@ public class PessoaFisica {
     }
 
     private boolean validaCPF(String CPF) {
-        // Verifica sequencia de digitos iguais e tamanho (11 dígitos)
-        if (! (CPF.chars().allMatch(Character::isDigit))) {
+        if (!(CPF.chars().allMatch(Character::isDigit))) {
             System.out.println("CPF possui caracteres não numéricos!");
             return false;
-        }
-        else if ((CPF.length() != 11) || CPF.matches("[0]{11}|[1]{11}|[2]{11}|[3]{11}|[4]{11}|[5]{11}|[6]{11}|[7]{11}|[8]{11}|[9]{11}"))
+        } else if ((CPF.length() != 11) || CPF.matches("[0]{11}|[1]{11}|[2]{11}|[3]{11}|[4]{11}|[5]{11}|[6]{11}|[7]{11}|[8]{11}|[9]{11}"))
             return false;
         return true;
     }
