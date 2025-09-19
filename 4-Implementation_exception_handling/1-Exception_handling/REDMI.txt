@@ -1,0 +1,5 @@
+Em Java, as exceções são um mecanimo usado para tratar eventos excepcionais ou inesperados.
+
+O tratamento de exceções é separado do fluxo normal de execução do código.
+
+Exceções em Java são representados por classes e fazem parte da estrutura Exception Handling.
