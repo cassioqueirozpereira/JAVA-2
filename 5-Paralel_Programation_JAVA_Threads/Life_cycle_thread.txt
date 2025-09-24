@@ -1,0 +1,11 @@
+New: O estado inicial da thread. A thread foi criada, mas o método start() ainda não foi chamado. Permite a inicialização de variáveis e objetos antes do início da execução.
+
+Runnable: Após a chamada ao método start(), a thread está pronta para ser executada, aguardando a CPU. A thread pode ser executada a qualquer momento quando a CPU estiver disponível. Uma thread nesse estado, pode ainda não estar "rodando" ativamente, apenas pronta para ser executada.
+
+Blocked: Ocorre quando uma thread tenta acessar um recurso sincronizado já bloqueado por outra thread. Nesse estado, ela aguarda até que o monitor(lock) seja liberado. Garante acesso exclusivo a recursos sincronizados, evitando condições de corrida e inconsistências, com execução segura em ambientes multithread.
+
+Timed_Waiting: Estado em que a thread aguarda por um período de tempo definido, sem ocupar o processador. Tem, como objetivo, possibilitar que outras threads sejam executadas enquanto a atual espera. Permite temporizar operações, evitando bloqueios permanentes. Melhora o desempenho ao liberar recursos enquanto aguarda eventos ou tempo limite.
+
+Waiting: Estado em que a thread fica em espera indefinida até ser despertada ou notificada. Isso ocorre ao utilizar métodos como wait(), join() (sem tempo limite) ou park(). Facilita a sincronização entre threads, coordenando a execução em processos dependentes. Evita desperdício de recurso ao suspender a execução até que uma condição seja satisfeita.
+
+Terminated: A thread finalizou sua execução. Isso acontece quando o método run() completa ou a thread é interrompida. Marca o fim do ciclo de vida da thread, liberando os recursos ocupados por ela. Após esse estado, a thread não pode ser reiniciada.

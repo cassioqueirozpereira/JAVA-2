@@ -1,0 +1,7 @@
+Definição: Uso simultâneo de múltiplas threads para executar tarefas em paralelo, acelerando o processamento e otimizando o uso de múltiplos núcleos do processador.
+
+Relevância: Muito importante em sistemas modernos com processadores multicore, permitindo melhor desempenho e resposta de aplicações complexas.
+
+Thread: Unidade de execução independente dentro de um programa.
+
+Multithreading: Capacidade do java de criar e gerenciar múltiplas threads que rodam em paralelo.

@@ -1,0 +1,21 @@
+Principais comandos no tratamento de exceções.
+
+ESTRUTURA SINTÁTICA:
+
+Bloco 'try': Contém o código que pode lançar uma exceção.
+
+Bloco 'catch': Captura e trata tipos específicos de exceções que podem ocorrer dentro do bloco 'try' correspondente.
+
+Bloco 'finally': Contém o código que sempre será executado, independente de ocorrer ou não uma exceção.
+
+Instrução 'throw': É usada para lançar manualmente uma exceção de dentro de um método ou bloco de código.
+
+ESTRUTURA SEMÂNTICA:
+
+Lançamento de exceções: Quando ocorre uma situação excepcional, uma exceção é "lançada" usando a instrução 'throw'.
+
+Captura de exceções: O bloco 'catch' é responsável por capturar e tratar tipos específicos de exceções.
+
+Propagação de exceção: Quando um erro não é tratado em uma parte do código, ele é passado para a próxima parte que o chamou. O erro vai subindo de nível até encontrar um bloco 'catch' que consiga lidar com ele.
+
+Bloco "finally": Normalmente, é usado para operações de limpeza ou liberação de recursos.

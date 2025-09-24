@@ -1,0 +1,7 @@
+Estrutua do diagrama de class.
+
+Na parte superior vai o nome da class.
+
+No corpo vai os atributos da class.
+
+na parte inferior vai os métodos da class.

@@ -1,0 +1,27 @@
+getPriority(): Retorna o valor de prioridade da thread.
+
+setPriority(): Define o valor de prioridade (1 a 10). Quanto maior, mais chance de execução. Se a prioridade não for definida, como padrão é 5.
+
+getState(): Retorna o estado atual da thread(NEW, RUNNABLE, TIMED_WAITING, WAITING, BLOCKED, TERMINATED), útil para depuração e monitoramento.
+
+getId(): Retorna o ID único atribuído a uma thread pelo JVM.
+
+getName(): Retorna o nome da thread.
+
+setName(): Define o nome da thread. Facilitando a identificação em logs e depuração.
+
+currentThread(): Retorna a referência à thread que está atualmente em execução.
+
+join(): Faz com que a thread atual aguarde a conclusão de outra thread antes de continuar.
+
+run(): Contém o código que será executado pela thread; Chamado indiretamente por start().
+
+setDaemon(): Define a thread como daemon, permitindo sua execução em segundo plano até que todas as threads user sejam finalizadas.
+
+start(): Inicia a execução de um thread, chamando automaticamente o método run().
+
+stop(): Método obsoleto para parar a execução de uma thread; Deve ser evitado devido a riscos de inconsistência.
+
+sleep(long millis): Faz com a thread pause sua execução por um período específico, permitindo que outras threads sejam executadas.
+
+yield(): Sugere ao processador que a thread atual pode ceder seu tempo de execução para outras threads com mesma prioridade. "thread gentil".
