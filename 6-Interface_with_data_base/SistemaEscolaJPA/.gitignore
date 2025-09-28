@@ -1,0 +1,5 @@
+/target/
+/ESCOLA/
+derby.log
+*.class
+*.jar
