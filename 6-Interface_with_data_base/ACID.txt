@@ -1,0 +1,31 @@
+1 - ATOMICITY (ALL OR NOTHING)
+
+Essa é a propriedade mais intuitiva. Uma transação é tratada como uma unidade indivisível.
+
+    Se for bem-sucedida: Todas as operações dentro da transação são aplicadas.
+
+    Se falhar (por erro de código, falta de energia ou erro do banco de dados): Nenhuma das operações é aplicada. É o famoso ROLLBACK.
+
+2 - CONSISTENCY (VALIDATING THE BANK)
+
+A consistência garante que toda transação válida leve o banco de dados de um estado válido para outro estado válido.
+
+    Ela se baseia nas suas regras de negócio e nas restrições do banco de dados (como chaves primárias, chaves estrangeiras, NOT NULL).
+
+    Exemplo no seu projeto: Se você tentar inserir um aluno (Aluno) sem o número de matrícula (registration), a transação será abortada para manter a consistência, pois a matrícula é provavelmente uma chave primária obrigatória.
+
+3 - ISOLATION (SIMULTANEITY)
+
+O isolamento é crucial quando muitos usuários estão acessando o banco de dados ao mesmo tempo.
+
+Ele garante que a execução simultânea de várias transações resulte no mesmo estado que se essas transações tivessem sido executadas sequencialmente (uma após a outra).
+
+    O JPA e o Hibernate gerenciam o nível de isolamento para você, garantindo que as operações de leitura/escrita não se atrapalhem.
+
+4 - DARABILITY (SALVING IN THE DISK)
+
+A durabilidade assegura que, após uma transação ser confirmada (o famoso COMMIT), as mudanças são escritas em memória não volátil (disco rígido) de forma robusta.
+
+    O banco de dados usa mecanismos como arquivos de log para garantir que, mesmo que haja uma falha imediatamente após o COMMIT, ele possa recuperar os dados e confirmar que a transação foi salva na próxima vez que for iniciado.
+
+Conclusão: O ACID é a espinha dorsal de qualquer banco de dados confiável, garantindo que as regras do mundo real (como balanço de contas) sejam refletidas de forma precisa e segura no mundo digital.

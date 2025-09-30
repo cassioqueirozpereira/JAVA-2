@@ -17,14 +17,34 @@ public class SistemaEscola {
         System.out.println(
             "Aluno: " + aluno.getName() + 
             "\nMatrícula: " + aluno.getRegistration() +
+            "\nSetor: " + aluno.getSetor() +
             "\nEntrada: " + aluno.getYear() + 
-            "\n==========================="
+            "\n================================="
         );
+    }
+
+    public void read() {
+        System.out.print("Matrícula do Aluno a ser exibido: ");
+        try {
+            String registration = entrada.readLine();
+            Aluno aluno = dao.read(registration); // Chama read
+            
+            if (aluno != null) {
+                System.out.println("\n=================================");
+                display(aluno);
+            } else {
+                System.out.println("Aluno não encontrado.");
+            }
+        } catch (IOException e) {
+            System.err.println("ERRO: Falha ao ler a entrada do usuário.");
+        }
     }
 
     // Método para ler e exibir todos os alunos (chama dao.readAll)
     public void readAll() {
         System.out.println("\n--- Lista de Todos os Alunos ---");
+        System.out.println("\n=================================");
+        
         List<Aluno> lista = dao.readAll(); 
         
         if (lista.isEmpty()) {
@@ -45,6 +65,9 @@ public class SistemaEscola {
             
             System.out.print("Matrícula: ");
             aluno.setRegistration(entrada.readLine());
+
+            System.out.print("Setor: ");
+            aluno.setSetor(entrada.readLine());
             
             System.out.print("Entrada (Ano): ");
             aluno.setYear(Integer.parseInt(entrada.readLine()));

@@ -10,10 +10,10 @@ public class Main {
         int opcao = -1;
 
         while (true) {
-            System.out.println("\n-------------------------------------------");
+            System.out.println("\n------------------------------------------------------------");
             // Menu ajustado para a nova nomenclatura (1-ReadAll, 2-Create, 3-Delete)
-            System.out.println("1-Listar | 2-Inserir | 3-Excluir | 0-Sair");
-            System.out.println("-------------------------------------------");
+            System.out.println(" 1-Listar | 2-Listar Todos | 3-Inserir | 4-Excluir | 0-Sair");
+            System.out.println("------------------------------------------------------------");
             System.out.print("Escolha uma opção: ");
 
             try {
@@ -31,12 +31,15 @@ public class Main {
 
                 switch (opcao) {
                     case 1:
-                        sistema.readAll(); // Chama readAll
+                        sistema.read(); // Chama read
                         break;
                     case 2:
-                        sistema.createAluno(); // Chama createAluno
+                        sistema.readAll(); // Chama readAll
                         break;
                     case 3:
+                        sistema.createAluno(); // Chama createAluno
+                        break;
+                    case 4:
                         sistema.deleteAluno(); // Chama deleteAluno
                         break;
                     default:

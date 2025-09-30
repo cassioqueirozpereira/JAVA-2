@@ -23,13 +23,12 @@ public abstract class GenericDAO<E, K> {
     public void create(E entidade) {
         EntityManager em = getEntityManager();
         try {
-            em.getTransaction().begin(); 
+            em.getTransaction().begin();
             em.persist(entidade);       
-            em.getTransaction().commit(); 
+            em.getTransaction().commit();
         } catch (Exception e) {
-            if (em.getTransaction().isActive()) {
+            if (em.getTransaction().isActive())
                 em.getTransaction().rollback(); 
-            }
             throw new RuntimeException("Error creating entity: " + e.getMessage(), e);
         } finally {
             em.close(); 
@@ -46,9 +45,8 @@ public abstract class GenericDAO<E, K> {
                 em.getTransaction().commit();
             }
         } catch (Exception e) {
-            if (em.getTransaction().isActive()) {
+            if (em.getTransaction().isActive())
                 em.getTransaction().rollback();
-            }
             throw new RuntimeException("Error deleting entity: " + e.getMessage(), e);
         } finally {
             em.close();
@@ -62,9 +60,8 @@ public abstract class GenericDAO<E, K> {
             em.merge(entidade); 
             em.getTransaction().commit();
         } catch (Exception e) {
-            if (em.getTransaction().isActive()) {
+            if (em.getTransaction().isActive())
                 em.getTransaction().rollback();
-            }
             throw new RuntimeException("Error updating entity: " + e.getMessage(), e);
         } finally {
             em.close();

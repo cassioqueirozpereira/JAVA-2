@@ -13,6 +13,7 @@ public class Aluno {
     @Id 
     private String registration; // Corresponde a MATRICULA no BD
     private String name;         // Corresponde a NOME no BD
+    private String setor;        // Corresponde a SETOR no BD
     @Column(name = "ENTRY_YEAR")
     private int year;            // Corresponde a ENTRADA no BD
 
@@ -20,9 +21,10 @@ public class Aluno {
     public Aluno() {}
 
     // Construtor Completo
-    public Aluno(String registration, String name, int year) {
+    public Aluno(String registration, String name, String setor, int year) {
         this.registration = registration;
         this.name = name;
+        this.setor = setor;
         this.year = year;
     }
     
@@ -36,6 +38,10 @@ public class Aluno {
         return name;
     }
 
+    public String getSetor() {
+        return setor;
+    }
+
     public int getYear() {
         return year;
     }
@@ -46,6 +52,10 @@ public class Aluno {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setSetor(String setor) {
+        this.setor = setor;
     }
 
     public void setYear(int year) {
