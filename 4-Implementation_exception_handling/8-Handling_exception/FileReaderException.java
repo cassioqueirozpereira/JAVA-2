@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import javax.swing.JOptionPane;
 
-public class HandlingException {
+public class FileReaderException {
     public static StringBuilder output = new StringBuilder();
     public static void main(String[] args) {
         BufferedReader leitor = null;
@@ -35,7 +35,6 @@ public class HandlingException {
             } catch (IOException e) {
                 output.append("Error to close file: " + e.getMessage());
                 JOptionPane.showMessageDialog(null, output.toString(), "Exception handling", JOptionPane.INFORMATION_MESSAGE);
-
             }
         }
     }
